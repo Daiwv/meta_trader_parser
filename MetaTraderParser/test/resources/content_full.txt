@@ -1,0 +1,13 @@
+SILVER,Daily
+Date	2017.06.12
+Open	17.175
+High	17.222
+Low	16.899
+Close	16.937
+Volume	7999
+Bands(14) Upper	17.747
+Bands(14) Lower	16.992
+Indikatorfenster 1
+RSI(14)	41.1818
+Indikatorfenster 2
+ATR(14)	0.2281
