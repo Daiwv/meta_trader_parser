@@ -1,21 +1,11 @@
 package model;
 
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class MetaTraderDataFrame {
-
-	private static MetaTraderDataFrame instance = null;
-
-	private MetaTraderDataFrame() {
-	}
-
-	public static MetaTraderDataFrame getInstance() {
-		if (instance == null) {
-			instance = new MetaTraderDataFrame();
-		}
-		return instance;
-	}
 
 	private StringProperty symbol;
 
@@ -26,6 +16,25 @@ public class MetaTraderDataFrame {
 
 	private DoubleProperty rsi;
 	private DoubleProperty atr;
+
+	private static MetaTraderDataFrame instance = null;
+
+	public MetaTraderDataFrame() {
+		symbol = new SimpleStringProperty();
+		open = new SimpleDoubleProperty();
+		high = new SimpleDoubleProperty();
+		low = new SimpleDoubleProperty();
+		close = new SimpleDoubleProperty();
+		rsi = new SimpleDoubleProperty();
+		atr = new SimpleDoubleProperty();
+	}
+
+	public static MetaTraderDataFrame getInstance() {
+		if (instance == null) {
+			instance = new MetaTraderDataFrame();
+		}
+		return instance;
+	}
 
 	public String getSymbol() {
 		return symbol.get();
@@ -57,7 +66,7 @@ public class MetaTraderDataFrame {
 
 	public void setLow(double low) {
 		this.low.set(low);
-		;
+
 	}
 
 	public double getClose() {
